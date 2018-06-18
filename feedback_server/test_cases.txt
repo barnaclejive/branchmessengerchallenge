@@ -1,0 +1,12 @@
+
+I have not included any actual integration tests but here is a description of some of the functional testing I did using a REST client.
+
+* Feedback for new session from a new user - 200.
+* Feedback from a user who has already left feedback for the session - 409.
+* Feedback request missing the X-UserId header - 400.
+* Insert over 15 feedbacks, use GET /v1/feedback and see that only 15 are returned and they are in timestamp descending order.
+- All feedback data matches what was inserted.
+- Pay specific attention that the timestamp is successfully converted back from epoch seconds in DB to UTC format.
+* Insert feedbacks for varying rating.
+- Use the rating parameter on GET /v1/feedback results in only feedbacks of that rating to be returned.
+- Exclude the rating parameter on GET /v1/feedback and see that the results in feedbacks of varying rating.

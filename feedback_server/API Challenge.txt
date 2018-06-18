@@ -1,0 +1,27 @@
+API Challenge
+
+Test-
+
+You are to write a new micro-service that will allow users to share feedback
+on their last game session and allow visibility to a live operations team.
+
+Users can rate their session from 1 to 5 and leave a comment.
+Session id is provided in the url path and the user id is in the header named X-UserId.
+
+Players within the same gaming session rate via the same session id, but a player can only leave one feedback per session.
+
+Following RESTful principles:
+
+1 - Write an HTTP endpoint for players to post a new feedback for a session.
+2 - Write an HTTP endpoint to get the last 15 feedbacks left by players and allow filtering by rating.
+
+Rules-
+
+This test has a time limit of one week. You may use the language that you're most comfortable with,
+or even explore a new one. The same applies for the database you choose for your tool.
+
+Required:
+1. Document your database design. (schema/index/query)
+2. Document your api design. (routes, payload)
+3. Document your code
+4. Document your test cases
