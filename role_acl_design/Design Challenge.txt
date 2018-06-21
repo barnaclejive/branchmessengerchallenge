@@ -1,0 +1,15 @@
+Design Challenge
+
+Design a role based access control system for the following matrix:
+
+Feature Employee  Manager Supervisor  District Leader Regional Leader Corporate Leader
+A       x	        x			  x           x               x               x
+B       x         x       x           x               x               x
+C                 x       x           x               x               x
+D                                     x               x               x
+E                                     x                               x
+F                                                                     x
+
+
+Feel free to code it using any language and/or the required database design. Pseudo code with detailed design would also work.
+The system should be extensible to add more roles and more features.
