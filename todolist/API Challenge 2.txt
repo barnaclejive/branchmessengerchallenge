@@ -1,0 +1,26 @@
+API Challenge
+
+You are tasked with creating a to-do list app backend with many lists of to-dos.
+
+Prerequisites: Code in Golang and use this framework https://github.com/gin-gonic/gin to create a RESTful api.
+
+Project requirements:
+- Create a list
+- Add a to-do to to a list
+- Delete a to-do from a list
+- Add notes to a to-do
+- Set a due date on a to-do
+- View completed to-dos
+    - There should be a filter to separate from viewing active to-dos
+    - Show a search field for searching completed to-dos
+    - Autocomplete results while typing
+
+Required:
+1. Document your database design. (schema/index/query)
+2. Document your api design. (routes, payload)
+3. Document your code only if needed
+4. Document your test cases
+
+Bonus:
+1. Use Protobuf/Flat buffers
+2. Use grpc

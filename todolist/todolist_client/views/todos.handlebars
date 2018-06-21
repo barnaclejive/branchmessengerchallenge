@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<ul>
+{{#each todos}}
+  <li>
+    <a href="/todos/edit/{{this.[0]}}">{{this.[1]}}</a>
+  </li>
+
+{{/each}}
+</ul>

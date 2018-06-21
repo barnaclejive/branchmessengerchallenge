@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package todolist;
+
+service TodoListService {
+  rpc CreateTodoList (CreateTodoListRequest) returns (TodoList) {}
+  rpc GetTodoLists (Empty) returns (GetTodoListsResponse) {}
+  rpc CreateTodo (CreateTodoRequest) returns (Todo) {}
+  rpc UpdateTodo (UpdateTodoRequest) returns (Empty) {}
+  rpc GetTodosForList (GetTodosForListRequest) returns (TodosResponse) {}
+  rpc SearchTodos (SearchTodosRequest) returns (TodosResponse) {}
+  rpc DeleteTodo (DeleteTodoRequest) returns (DeleteTodoResponse) {}
+}
+
+message TodoList {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Todo {
+  int32 id = 1;
+  int32 list_id = 2;
+  string name = 3;
+  string notes = 4;
+  int32 due_date = 5;
+  bool complete = 6;
+}
+
+message CreateTodoListRequest {
+  string name = 1;
+}
+
+message GetTodoListsResponse {
+  repeated TodoList todo_lists = 1;
+}
+
+message CreateTodoRequest {
+  int32 list_id = 1;
+  string name = 2;
+  bool complete = 3;
+  string notes = 4;
+  int32 due_date = 5;
+}
+
+message UpdateTodoRequest {
+  int32 id = 1;
+  string name = 2;
+  bool complete = 3;
+  string notes = 4;
+  int32 due_date = 5;
+}
+
+message GetTodosForListRequest {
+  int32 list_id = 1;
+}
+
+message SearchTodosRequest {
+  string term = 1;
+  enum CompleteStatus {
+    ALL = 0;
+    COMPLETE = 1;
+    INCOMPLETE = 2;
+  }
+  CompleteStatus status = 2;
+}
+
+message TodosResponse {
+  repeated Todo todos = 1;
+}
+
+message DeleteTodoRequest {
+  int32 id = 1;
+}
+
+message DeleteTodoResponse {
+  int32 id = 1;
+}
+
+message Empty {
+}
